@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import androidx.navigation.fragment.findNavController
 
 // TODO: Rename parameter arguments, choose names that match
@@ -23,6 +24,7 @@ class FragmentFirst : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     lateinit var btnsecond: Button
+    lateinit var ettext: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
        // btnsecond=findNavController()
@@ -44,8 +46,12 @@ class FragmentFirst : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btnsecond=view.findViewById(R.id.btnsecond)
+        ettext=view.findViewById(R.id.ettext)
         btnsecond.setOnClickListener {
-            findNavController().navigate(R.id.fragmentsecond)
+            var bundle=Bundle()
+            bundle.putString("name", ettext.text.toString())
+            bundle.putInt("number",1)
+            findNavController().navigate(R.id.action_fragmentFirst_to_fragmentsecond,bundle)
         }
     }
 

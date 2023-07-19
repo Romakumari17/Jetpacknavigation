@@ -3,16 +3,50 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
+    android:label="@string/Back"
     app:startDestination="@id/fragmentFirst">
 
     <fragment
         android:id="@+id/fragmentFirst"
         android:name="com.romakumari.jetpacknavigation.FragmentFirst"
         android:label="fragment_first"
-        tools:layout="@layout/fragment_first" />
+        tools:layout="@layout/fragment_first">
+        <action
+            android:id="@+id/action_fragmentFirst_to_fragmentsecond"
+            app:destination="@id/fragmentsecond"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"
+            app:popUpToInclusive="false" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentsecond"
         android:name="com.romakumari.jetpacknavigation.Fragmentsecond"
         android:label="fragment_fragmentsecond"
-        tools:layout="@layout/fragment_fragmentsecond" />
+        tools:layout="@layout/fragment_fragmentsecond">
+        <action
+            android:id="@+id/action_fragmentsecond_to_fragmentThird"
+            app:destination="@id/fragmentThird"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentThird"
+        android:name="com.romakumari.jetpacknavigation.FragmentThird"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_third">
+        <action
+            android:id="@+id/action_fragmentThird_to_fragmentFirst"
+            app:destination="@id/fragmentFirst"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_fragmentThird_to_fragmentFirst2"
+            app:destination="@id/fragmentFirst" />
+    </fragment>
 </navigation>

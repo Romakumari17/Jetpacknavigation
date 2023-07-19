@@ -3,23 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".FragmentFirst">
+    tools:context=".FragmentThird">
+
+    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1"
-        android:textSize="50dp"/>
-    <!-- TODO: Update blank fragment layout -->
+        android:text="3"
+        android:textSize="50sp"
+        />
     <Button
+        android:id="@+id/btnfirst"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/second"
-        android:id="@+id/btnsecond"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/ettext"/>
-
+        android:text="first"/>
 </LinearLayout>
